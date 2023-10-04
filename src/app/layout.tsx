@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: "Create Notes using Ai",
 };
 
+export const runtime = "edge";
+
 export default function RootLayout({
   children,
 }: {

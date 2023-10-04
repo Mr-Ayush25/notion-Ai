@@ -8,7 +8,7 @@ export const runtime = "edge";
 
 const POST = async (req: Request) => {
   // auth from clerk server
-  const { userId } = auth();
+  const { userId } = await auth();
   if (!userId) {
     return new NextResponse("Unauthorised", { status: 401 });
   }

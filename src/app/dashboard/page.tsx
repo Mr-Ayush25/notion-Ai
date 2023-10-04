@@ -44,8 +44,8 @@ const Dashboard = async () => {
         {/* Display all notes */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5">
           <CreateNoteDialog />
-          {notes.length !== 0 &&
-            notes.map((note) => (
+          {notes?.length !== 0 &&
+            notes?.map((note) => (
               <Link key={note._id} href={`/notebook/${note._id}`}>
                 <div className="overflow-hidden flex flex-col border border-stone-300 hover:shadow-xl rounded-lg transition hover:-translate-y-1 ">
                   <div className="relative w-full">
