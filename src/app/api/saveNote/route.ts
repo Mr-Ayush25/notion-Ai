@@ -2,6 +2,8 @@ import { connect } from "@/lib/db/connect";
 import { Note } from "@/lib/model/Note";
 import { NextResponse } from "next/server";
 
+export const ssg = false;
+
 export const POST = async (req: Request) => {
   const body = await req.json();
 
@@ -20,7 +22,7 @@ export const POST = async (req: Request) => {
   try {
     await connect();
     const note = await Note.findById(noteId);
-    // console.log(note);
+
     if (!note) {
       return new NextResponse("Failed to update", { status: 500 });
     }
@@ -30,7 +32,10 @@ export const POST = async (req: Request) => {
 
       return NextResponse.json({ success: true }, { status: 200 });
     }
-    return NextResponse.json({ message: "Note is already updated" }, { status: 200 });
+    return NextResponse.json(
+      { message: "Note is already updated" },
+      { status: 200 }
+    );
   } catch (error) {
     console.error(error);
     return NextResponse.json({ success: false }, { status: 500 });
