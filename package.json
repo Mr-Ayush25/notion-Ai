@@ -20,6 +20,7 @@
     "axios": "^1.5.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "encoding": "^0.1.13",
     "firebase": "^10.4.0",
     "latest-version": "^7.0.0",
     "lucide-react": "^0.279.0",
