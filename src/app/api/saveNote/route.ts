@@ -2,7 +2,7 @@ import { connect } from "@/lib/db/connect";
 import { Note } from "@/lib/model/Note";
 import { NextResponse } from "next/server";
 
-export const ssg = false;
+export const preventSSG = true;
 
 export const POST = async (req: Request) => {
   const body = await req.json();
