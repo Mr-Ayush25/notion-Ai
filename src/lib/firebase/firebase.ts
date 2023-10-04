@@ -1,5 +1,4 @@
 // Import the functions you need from the SDKs you need
-import { error } from "console";
 import { initializeApp } from "firebase/app";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -35,6 +34,7 @@ export const uploadFileToFirebase = async (
     });
     const firebase_url = await getDownloadURL(storageRef);
     return firebase_url;
-  } catch (error) {}
-  console.error(error);
+  } catch (error) {
+    console.error(error);
+  }
 };
